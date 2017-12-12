@@ -1,5 +1,5 @@
 {
-	"name": "vyg/silverstripe-nzpost-addressfinder",
+	"name": "voyage/silverstripe-nzpost-addressfinder",
 	"type": "silverstripe-module",
 	"description": "Add address autocomplete field using NZPost API",
 	"keywords": ["silverstripe", "nzpost", "address"],
