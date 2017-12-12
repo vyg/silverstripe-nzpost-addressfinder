@@ -1,0 +1,32 @@
+.autocomplete-dropdown {
+  position: relative;
+  max-width: 500px;
+}
+
+.autocomplete-dropdown ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: $FFF;
+  font-size: 14px;
+  line-height: 1.6;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.autocomplete-dropdown ul li {
+  padding: 7px 10px;
+}
+
+.autocomplete-dropdown ul li:hover,
+.autocomplete-dropdown ul li:focus,
+.autocomplete-dropdown ul li.active {
+  background: #ECECEC;
+}

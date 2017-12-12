@@ -1,0 +1,10 @@
+---
+Name: nzpostaddress
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+
+NZPOSTAPI:
+  base_url: "https://api.nzpost.co.nz/privateaddresschecker/1.0/"
+  auth_url: "https://oauth.nzpost.co.nz/"

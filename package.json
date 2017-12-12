@@ -1,0 +1,59 @@
+{
+  "name": "nzpost-addressfinder",
+  "version": "1.0.0",
+  "author": "Ryan O'Hara <ryan@vyg.co.nz>",
+  "description": "",
+  "main": "src/javascript/index.js",
+  "scripts": {
+    "build": "npm run scripts && npm run styles",
+    "browserify": "browserify -s nzpostautocomplete -t [ babelify --presets [env] ] src/javascript/index.js -o dist/javascript/nzpostautocomplete.js",
+    "lint": "eslint --quiet src/javascript/**.*js",
+    "prebuild": "npm run test",
+    "scripts": "npm run browserify && npm run uglify",
+    "size": "size-limit",
+    "start": "watchify -vs nzpostautocomplete -t [ babelify --presets [env] ] src/javascript/index.js -do dist/javascript/nzpostautocomplete.js",
+    "styles": "cleancss src/css/styles.css -o dist/css/nzpostautocomplete.min.css",
+    "test": "npm run size && npm run lint",
+    "uglify": "uglifyjs -m -c -o dist/javascript/nzpostautocomplete.min.js dist/javascript/nzpostautocomplete.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "lodash.debounce": "^4.0.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "7.1.1",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "13.0.1",
+    "clean-css": "^4.1.9",
+    "clean-css-cli": "^4.1.10",
+    "eslint": "3.10.2",
+    "eslint-config-airbnb": "10.0.1",
+    "jshint": "^2.0",
+    "size-limit": "^0.13.2",
+    "uglify-js": "^2.4",
+    "watchify": "^3.9.0"
+  },
+  "size-limit": [
+    {
+      "path": "src/javascript/index.js",
+      "limit": "8kb"
+    }
+  ],
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "airbnb"
+    ],
+    "rules": {
+      "no-console": "off"
+    }
+  }
+}

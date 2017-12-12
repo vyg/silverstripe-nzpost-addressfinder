@@ -1,0 +1,19 @@
+{
+	"name": "vyg/silverstripe-nzpost-addressfinder",
+	"type": "silverstripe-module",
+	"description": "Add address autocomplete field using NZPost API",
+	"keywords": ["silverstripe", "nzpost", "address"],
+	"authors": [
+		{
+			"name": "Voyage",
+			"homepage": "http://voyage.studio"
+		}
+	],
+	"require": {
+		"php": ">=5.4",
+		"composer/installers": "*",
+		"silverstripe/framework": ">=3.5.0",
+		"guzzlehttp/guzzle": "^6.3"
+	},
+	"minimum-stability": "dev"
+}
