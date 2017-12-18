@@ -1,13 +1,18 @@
 import NZPostAutocomplete from './autocomplete';
 
 // Initialise the class
-const input = document.querySelectorAll('input.addressfinder')[0];
-const url = input.getAttribute('data-suggest');
+function init(el) {
+  const url = el.getAttribute('data-suggest');
 
-const options = {
-  source: url,
-  debug: false,
-};
+  const options = {
+    source: url,
+    debug: false,
+  };
+  return new NZPostAutocomplete(el, options);
+}
 
-// eslint-disable-next-line no-unused-vars
-const autocomplete = new NZPostAutocomplete('input.addressfinder', options);
+// Get all of our address finder elements
+const input = document.querySelectorAll('input.addressfinder');
+for (const el of input) {
+  init(el);
+}

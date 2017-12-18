@@ -2106,15 +2106,6 @@ var NZPostAutocomplete = function () {
     value: function focusToNextControl() {
       if (this.config.debug) console.debug('Tab to next input');
       this.input.blur();
-
-      // let next = document.querySelector('[tabIndex="' + (+this.input.tabIndex + 1) + '"]');
-      // if (!next) {
-      //   const inputs = Array.prototype.slice.call(document.getElementsByTagName('input'));
-      //   next = inputs[inputs.indexOf(this.input) + 1];
-      // }
-      //
-      // if (this.config.debug && next) console.debug('Set focus on', next);
-      // if (next) next.focus();
     }
   }, {
     key: 'onClickOutside',
@@ -2527,16 +2518,42 @@ var _autocomplete2 = _interopRequireDefault(_autocomplete);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Initialise the class
-var input = document.querySelectorAll('input.addressfinder')[0];
-var url = input.getAttribute('data-suggest');
+function init(el) {
+  var url = el.getAttribute('data-suggest');
 
-var options = {
-  source: url,
-  debug: false
-};
+  var options = {
+    source: url,
+    debug: false
+  };
+  return new _autocomplete2.default(el, options);
+}
 
-// eslint-disable-next-line no-unused-vars
-var autocomplete = new _autocomplete2.default('input.addressfinder', options);
+// Get all of our address finder elements
+var input = document.querySelectorAll('input.addressfinder');
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+  for (var _iterator = input[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var el = _step.value;
+
+    init(el);
+  }
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
 
 },{"./autocomplete":29}]},{},[31])(31)
 });

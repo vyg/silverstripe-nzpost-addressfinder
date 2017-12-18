@@ -67,15 +67,6 @@ class NZPostAutocomplete {
   focusToNextControl() {
     if (this.config.debug) console.debug('Tab to next input');
     this.input.blur();
-
-    // let next = document.querySelector('[tabIndex="' + (+this.input.tabIndex + 1) + '"]');
-    // if (!next) {
-    //   const inputs = Array.prototype.slice.call(document.getElementsByTagName('input'));
-    //   next = inputs[inputs.indexOf(this.input) + 1];
-    // }
-    //
-    // if (this.config.debug && next) console.debug('Set focus on', next);
-    // if (next) next.focus();
   }
 
   onClickOutside(e) {
